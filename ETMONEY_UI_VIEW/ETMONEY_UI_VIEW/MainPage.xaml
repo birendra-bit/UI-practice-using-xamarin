@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ETMONEY_UI_VIEW"
+             x:Class="ETMONEY_UI_VIEW.MainPage"
+             BackgroundImage="backIMG.jpg">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="flexlayout" TargetType="FlexLayout">
+                <Setter Property="AlignContent" Value="Center"/>
+                <Setter Property="JustifyContent" Value="SpaceEvenly"/>
+            </Style>
+            <Style x:Key="frame" TargetType="Frame">
+                <Setter Property="HeightRequest" Value="150"/>
+                <Setter Property="WidthRequest" Value="200"/>
+                <Setter Property="BorderColor" Value="Gray"/>
+                <Setter Property="IsClippedToBounds" Value="True"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="HasShadow" Value="True"/>
+             
+            </Style>
+            <Style x:Key="img" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFill"/>
+                <Setter Property="Margin" Value="-20"/>
+                <Setter Property="HeightRequest" Value="100"/>
+                <Setter Property="WidthRequest" Value="100"/>
+            </Style>
+            <Style x:Key="lbl" TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="Margin" Value="0,30"/>
+            </Style>
+            <Style x:Key="ItemView" TargetType="StackLayout">
+                <Setter Property="Orientation" Value="Horizontal"/>
+                <Setter Property="Spacing" Value="2"/>
+                <!--<Setter Property="Margin" Value="10"/>-->
+            </Style>
+            <Style x:Key="StkCol1" TargetType="StackLayout">
+                <Setter Property="WidthRequest" Value="60"/>
+                <Setter Property="Padding" Value="5"/>
+                <Setter Property="HeightRequest" Value="60"/>
+            </Style>
+            <Style x:Key="TitleLbl" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                
+            </Style>
+            <Style x:Key="ContentLbl" TargetType="Label">
+                <Setter Property="TextColor" Value="Gray"/>
+                <Setter Property="FontSize" Value="15"/>
+               
+            </Style>
+            <Style x:Key="users" TargetType="Image">
+                <Setter Property="HeightRequest" Value="30"/>
+                <Setter Property="WidthRequest" Value="30"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView Orientation="Vertical" Margin="0" Padding="0" VerticalScrollBarVisibility="Never">
+        <StackLayout Margin="0" Spacing="0">
+            <StackLayout Orientation="Horizontal">
+                <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+                    <Image Source="logo.jpg" HeightRequest="40" WidthRequest="150" Aspect="AspectFill" Margin="10"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End" Spacing="10" Margin="15">
+                    <Image Source="gift.jpg" Style="{StaticResource users}"/>
+                    <Image Source="noticebell.jpg" Style="{StaticResource users}"/>
+                    <Image Source="user.jpg" Style="{StaticResource users}"/>
+                    <Image Source="menu.jpg" Style="{StaticResource users}"/>
+                </StackLayout>
+               
+            </StackLayout>
+            <StackLayout x:Name="top" HeightRequest="150" Margin="0">
+                <Label Text="Good Morining Mr ABC!" Style="{StaticResource lbl}"/>
+            </StackLayout>
+            <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" BackgroundColor="white" HorizontalOptions="Center" Margin="0">
+                <FlexLayout Style="{StaticResource flexlayout}">
+                    <Frame Style="{StaticResource frame}">
+                        <ImageButton x:Name="ImgBtn"
+                                Source="health.jpg" 
+                                Style="{StaticResource img}"
+                                />
+                    </Frame>
+                    <Frame Style="{StaticResource frame}">
+                        <Image Source="download.jpg" 
+                                Style="{StaticResource img}"/>
+                    </Frame>
+                    <Frame Style="{StaticResource frame}">
+                        <Image Source="investment.jpg" 
+                                Style="{StaticResource img}"/>
+                    </Frame>
+                    <Frame Style="{StaticResource frame}">
+                        <Image Source="creditscore.jpg" 
+                               Style="{StaticResource img}"/>
+                    </Frame>
+                </FlexLayout>
+            </ScrollView>
+            <StackLayout Margin="0" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White">
+                <ListView ItemsSource="{Binding UnscrollList}"
+                          HasUnevenRows="True">
+                    <ListView.ItemTemplate >
+                        <DataTemplate >
+                            <ViewCell >
+                                <StackLayout Style="{StaticResource ItemView}" >
+                                    <StackLayout Style="{StaticResource StkCol1}">
+                                        <Image Source="{Binding ImageURL}" Aspect="AspectFill"/>
+                                    </StackLayout>
+                                    <StackLayout Spacing="0">
+                                        <Label 
+                                           Style="{StaticResource TitleLbl}"
+                                           Text="{Binding Title}"/>
+                                        <Label 
+                                           Style="{StaticResource ContentLbl}"
+                                           Text="{Binding Content}"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout BackgroundColor="LightGray">
+                <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                    <FlexLayout Style="{StaticResource flexlayout}">
+                        <Frame Style="{StaticResource frame}" WidthRequest="100" HeightRequest="150">
+                            <Label Text="Save tax for this fiancial year 19-20"
+                                   VerticalTextAlignment="Center"
+                                   TextColor="Black"
+                                   FontSize="15"
+                                   FontAttributes="Bold"/>
+                        </Frame>
+                        <Frame Style="{StaticResource frame}" WidthRequest="100" HeightRequest="150"  BackgroundColor="Silver">
+                            <Label Text="Save tax for this fiancial year 19-20"
+                                   VerticalTextAlignment="Center"
+                                   TextColor="White"
+                                   FontSize="20"
+                                   FontAttributes="Bold"
+                                  />
+                        </Frame>
+                        <Frame Style="{StaticResource frame}" WidthRequest="100" HeightRequest="150" BackgroundColor="Magenta">
+                            <Label Text="Save tax for this fiancial year 19-20"
+                                   VerticalTextAlignment="Center"
+                                   TextColor="White"
+                                   FontSize="20"
+                                   FontAttributes="Bold"
+                                   />
+                        </Frame>
+                        <Frame Style="{StaticResource frame}" WidthRequest="100" HeightRequest="150" BackgroundColor="AliceBlue">
+                            <Label Text="Save tax for this fiancial year 19-20"
+                                   VerticalTextAlignment="Center"
+                                   TextColor="Black"
+                                   FontSize="20"
+                                   FontAttributes="Bold"/>
+                        </Frame>
+                    </FlexLayout>
+                </ScrollView>
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Frame Style="{StaticResource frame}" WidthRequest="200" HeightRequest="300">
+                        <StackLayout>
+                            <Image Source="images.jpg" HeightRequest="200" WidthRequest="300" Aspect="AspectFill" />
+                            <Label Text="Want to invest but not sure how to pick your first mutual fund?Watch our short video and get answer to all your..."/>
+                            <Label HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="TAP TO KNOW MORE"
+                                              TextColor="Blue"
+                                              FontSize="10"
+                                              FontAttributes="Bold"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <StackLayout >
+                    <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="Gray"/>
+                    <Label HorizontalOptions="Center" VerticalOptions="Center" Text="You are logged in as"/>
+                    <Label HorizontalOptions="Center" VerticalOptions="Center" Text="abc09238@gmail.com" FontAttributes="Bold" FontSize="Medium"/>
+                    <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Privacy Policy | Terms of Use"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
