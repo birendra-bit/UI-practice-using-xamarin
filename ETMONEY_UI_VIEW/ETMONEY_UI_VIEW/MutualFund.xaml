@@ -3,47 +3,98 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ETMONEY_UI_VIEW.MutualFund"
              Title="Ways To Get Started">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="header" TargetType="Label">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style x:Key="circle" TargetType="Button">
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="WidthRequest" Value="50"/>
+                <Setter Property="BorderRadius" Value="25"/>
+                <Setter Property="BackgroundColor" Value="LightGreen"/>
+            </Style>
+            <Style x:Key="arrow" TargetType="Label">
+                <!--<Setter Property="HorizontalOptions" Value="End"/>-->
+                <!--<Setter Property="TextColor" Value="White"/>-->
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalTextAlignment" Value="End"/>
+            </Style>
+            <Style x:Key="title" TargetType="Label">
+                <Setter Property="FontSize" Value="15"/>
+            </Style>
+            <Style x:Key="discrption" TargetType="Label">
+                <Setter Property="FontSize" Value="12"/>
+            </Style>
+            <Style x:Key="frame" TargetType="Frame">
+                <!--<Setter Property="WidthRequest" Value="150"/>-->
+                <Setter Property="HeightRequest" Value="250"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="BorderColor" Value="Gray"/>
+                <Setter Property="Margin" Value="10"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Most popular ways to get started"/>
-            <Frame>
+            <Label Style="{StaticResource header}" Text="Most popular ways to get started"/>
+            <Frame Style="{StaticResource frame}">
                 <StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <StackLayout>
-
+                            <Button Text="80C" Style="{StaticResource circle}"/>
                         </StackLayout>
                         <StackLayout>
-                            <Label Text="Save Tax for FY 19-20"/>
-                            <Label Text="l want to save tax under Section 80c"/>
+                            <Label Style="{StaticResource title}" Text="Save Tax for FY 19-20"/>
+                            <Label Style="{StaticResource discrption}" Text="l want to save tax under Section 80C save"/>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="End" >
+                            <Label Text=">" Style="{StaticResource arrow}"/>
                         </StackLayout>
                     </StackLayout>
+                    <BoxView BackgroundColor="Gray" HeightRequest="1"/>
                     <StackLayout Orientation="Horizontal">
                         <StackLayout>
-
+                            <Button Text="SIP" Style="{StaticResource circle}"/>
                         </StackLayout>
                         <StackLayout>
-                            <Label Text="Save Tax for FY 19-20"/>
-                            <Label Text="l want to save tax under Section 80c"/>
+                            <Label Style="{StaticResource title}" Text="Start a SIP"/>
+                            <Label Style="{StaticResource discrption}" Text="l want to start investing on a monthly basis"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text=">" Style="{StaticResource arrow}"/>
                         </StackLayout>
                     </StackLayout>
+                    <BoxView BackgroundColor="Gray" HeightRequest="1"/>
                     <StackLayout Orientation="Horizontal">
                         <StackLayout>
-
+                            <Button Text="ONE" Style="{StaticResource circle}"/>
                         </StackLayout>
                         <StackLayout>
-                            <Label Text="Save Tax for FY 19-20"/>
-                            <Label Text="l want to save tax under Section 80c"/>
+                            <Label Style="{StaticResource title}" Text="Invest One-time"/>
+                            <Label Style="{StaticResource discrption}" Text="I wish to invest some of my saving right now"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text=">" Style="{StaticResource arrow}"/>
                         </StackLayout>
                     </StackLayout>
+                    <BoxView BackgroundColor="Gray" HeightRequest="1"/>
                     <StackLayout Orientation="Horizontal">
                         <StackLayout>
-
+                            <Button Text="Rs" Style="{StaticResource circle}"/>
                         </StackLayout>
                         <StackLayout>
-                            <Label Text="Save Tax for FY 19-20"/>
-                            <Label Text="l want to save tax under Section 80c"/>
+                            <Label Style="{StaticResource title}" Text="Park my savings for some time"/>
+                            <Label Style="{StaticResource discrption}" Text="I want to earn up to 50% more returns than my savings account"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text=">" Style="{StaticResource arrow}"/>
                         </StackLayout>
                     </StackLayout>
+                    <!--<BoxView BackgroundColor="Gray" HeightRequest="1"/>-->
                 </StackLayout>
             </Frame>
         </StackLayout>

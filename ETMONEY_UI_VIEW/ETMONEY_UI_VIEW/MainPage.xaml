@@ -57,8 +57,8 @@
                
             </Style>
             <Style x:Key="users" TargetType="Image">
-                <Setter Property="HeightRequest" Value="30"/>
-                <Setter Property="WidthRequest" Value="30"/>
+                <Setter Property="HeightRequest" Value="25"/>
+                <Setter Property="WidthRequest" Value="25"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -101,7 +101,7 @@
                     </Frame>
                 </FlexLayout>
             </ScrollView>
-            <StackLayout Margin="0" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White">
+            <StackLayout Margin="0" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White" HeightRequest="520">
                 <ListView ItemsSource="{Binding UnscrollList}"
                           HasUnevenRows="True">
                     <ListView.ItemTemplate >
